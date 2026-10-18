@@ -1154,6 +1154,10 @@ body.dark-mode .no-results p {
     border-radius: 2px;
 }
 
+.no-results[hidden],
+#search-error[hidden] {
+    display: none !important;
+}
 
 
 /* body.dark-mode .planet-facts .fact-icon {
