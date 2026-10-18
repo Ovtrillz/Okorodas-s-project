@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Explorer</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="icon" type="image/png" href="Media/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="Media/favicon/favicon.svg" />
+<link rel="shortcut icon" href="media/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="media/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="media/favicon/site.webmanifest" />
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="navigation" aria-label="Main navigation">
+            <a class="logo" href="#" aria-label="Planet Explorer home">
+                <img src="Media/logo_black.svg" alt="Planet Explorer">
+            </a>
+
+           
+<button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+    <span class="theme-label">DARK</span>
+    <span class="moon-icon" aria-hidden="true">☾</span>
+</button>
+
+        </nav>
+    </header>
+
+    <main>
+   
+<section class="planet-search" aria-label="Search planets">
+    <form id="search-form" role="search">
+        <label class="visually-hidden" for="planet-search">
+            Search planet name
+        </label>
+
+        <span class="search-icon" aria-hidden="true">⌕</span>
+
+        <input
+            type="search"
+            id="planet-search"
+            name="planet"
+            placeholder="Search planet name..."
+            autocomplete="off"
+            required
+            aria-describedby="search-error"
+        >
+
+        <span id="search-error" class="search-error"
+              role="status" aria-live="polite" hidden>
+            No results
+        </span>
+
+        <button type="submit">Search</button>
+    </form>
+</section>
+
+
+        <section
+            class="planet-details"
+            aria-labelledby="planet-name"
+        >
+            <article class="planet-card">
+                <figure class="planet-image">
+                    <img
+                        src="Media/Profile Picture.png"
+                        alt="Earth viewed from space"
+                    >
+                </figure>
+
+                <section class="planet-information">
+                    <header class="planet-heading">
+                        <h1 id="planet-name">Earth</h1>
+                        <p class="planet-type">Terrestrial</p>
+                    </header>
+
+                    <p class="planet-description">
+                        The only known planet to support life,
+                        with liquid water on its surface.
+                    </p>
+
+                    <dl class="planet-statistics">
+                        <div>
+                            <dt>Gravity</dt>
+                            <dd>9.8</dd>
+                        </div>
+
+                        <div>
+                            <dt>Mass</dt>
+                            <dd>0.00315</dd>
+                        </div>
+
+                        <div>
+                            <dt>Period</dt>
+                            <dd>365</dd>
+                        </div>
+                    </dl>
+
+                 <ul class="planet-facts" aria-label="Additional facts">
+    <li>
+        <img src="media/Vector.svg" alt="" class="fact-icon">
+        <span>288</span>
+    </li>
+
+    <li>
+        <img src="Media/Half moon.svg" alt="" class="fact-icon">
+        <span>1</span>
+    </li>
+
+    <li>
+        <img src="media/Diameter.svg" alt="" class="fact-icon">
+        <span>12756</span>
+    </li>
+
+    <li>
+        <img src="media/Vector (1).svg" alt="" class="fact-icon">
+        <span>149.6</span>
+    </li>
+</ul>
+                </section>
+            </article>
+            
+<div class="no-results" role="status" aria-live="polite" hidden>
+    <h2>No results found!</h2>
+    <p>
+        We couldn’t find any planet matching your search.
+        Please double-check the name and try again.
+    </p>
+</div>
+
+        </section>
+
+        <section class="planet-comparison" aria-labelledby="comparison-title">
+            <header class="section-heading">
+                <h2 id="comparison-title">Planetary Facts at a Glance</h2>
+
+                <p>
+                    Below is a comparative table of major planets in our
+                    solar system. The data highlights key physical properties
+                    used by astronomers and researchers worldwide.
+                </p>
+            </header>
+            <div class="planet-table-container">
+            <table class="planet-table">
+                <caption>
+                    Data about the planets of our solar system
+                    (Planetary facts taken from NASA)
+                </caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col" colspan="2"></th>
+                        <th scope="col" class="white-heading">Name</th>
+                        <th scope="col" class="white-heading">Mass (10²⁴ kg)</th>
+                        <th scope="col" class="white-heading">Diameter (km)</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th scope="rowgroup" colspan="2" rowspan="4">
+                            Terrestrial Planets
+                        </th>
+                        <th scope="row">Mercury</th>
+                        <td>0.330</td>
+                        <td>4,879</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Venus</th>
+                        <td>4.87</td>
+                        <td>12,104</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Earth</th>
+                        <td>5.97</td>
+                        <td>12,756</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Mars</th>
+                        <td>0.642</td>
+                        <td>6,792</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="rowgroup" rowspan="4">Jovian Planets</th>
+                        <th scope="rowgroup" rowspan="2">Gas Giants</th>
+                        <th scope="row">Jupiter</th>
+                        <td>1898</td>
+                        <td>142,984</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Saturn</th>
+                        <td>568</td>
+                        <td>120,536</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="rowgroup" rowspan="2">Ice Giants</th>
+                        <th scope="row">Uranus</th>
+                        <td>86.8</td>
+                        <td>51,118</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Neptune</th>
+                        <td>102</td>
+                        <td>49,528</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row" colspan="2">Dwarf Planets</th>
+                        <th scope="row">Pluto</th>
+                        <td>0.0130</td>
+                        <td>2,377</td>
+                    </tr>
+                </tbody>
+            </table>
+             </div>
+        </section>
+    </main>
+
+    <script src="script.js" defer></script>
+
+    
+<footer class="site-footer">
+    <section class="footer-about" aria-labelledby="about-title">
+        <h2 id="about-title">About</h2>
+        <p>
+            <a href="https://github.com/Ovtrillz" target="_blank" rel="noopener noreferrer">
+                Okorodas Tolumoye Oviezibe
+            </a>
+        </p>
+    </section>
+
+    <section class="footer-credits" aria-label="Project credits">
+        <p>
+            &copy; 2026 Design by
+            <a href="http://amakandukwu.com/" target="_blank" rel="link to designer's website">
+                Amaka N
+            </a>
+        </p>
+
+        <p>
+            Built by
+            <a href="https://github.com/Ovtrillz/Capstone-Planet" target="_blank" rel="limk to project">
+                Ovtrillz
+            </a>. All rights reserved
+        </p>
+
+        <p>
+            <a href="https://tsacademyonline.com/" target="_blank" rel="Link to TSAcademy website">
+                TSAcademy
+            </a>
+        </p>
+    </section>
+</footer>
+
+
+</body>
+</html>
