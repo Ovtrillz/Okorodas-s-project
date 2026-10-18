@@ -227,6 +227,6 @@ Planet Explorer demonstrates the practical application of HTML, CSS, JavaScript,
 
 ## SHOUTOUT'S
 
-I want to give a special shoutout to my sis for helping me use her laptop for over a week now and aslo to my colleague ESter(https:github.com/babyGal124) in group 3 who helped me with the hosting and my Git and Github functions  
+I want to give a special shoutout to my sis for helping me use her laptop for over a week now and aslo to my colleague ESter:(https:github.com/babyGal124) in group 3 who helped me with the hosting and my Git and Github functions  
 
 
