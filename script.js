@@ -45,6 +45,10 @@ let planets = [];
 
 // Load planet data from planets.json
 async function loadPlanets() {
+    // Keep messages hidden while loading
+    if (searchError) searchError.hidden = true;
+    if (noResultsPanel) noResultsPanel.hidden = true;
+
     try {
         const response = await fetch('./planets.json');
 
@@ -54,29 +58,39 @@ async function loadPlanets() {
             );
         }
 
-        planets = await response.json();
+        const data = await response.json();
 
-        if (!Array.isArray(planets)) {
+        if (!Array.isArray(data)) {
             throw new Error('Planet data must be a JSON array.');
         }
 
-        // Hide error messages when the page first loads
-        if (searchError) searchError.hidden = true;
-        if (noResultsPanel) noResultsPanel.hidden = true;
+        planets = data;
 
-        // Display Earth by default
+        // Show Earth when the data loads successfully
         displayPlanet('Earth');
 
     } catch (error) {
         console.error('Error loading planets:', error);
 
+        // Hide the planet card and show a loading error
+        if (planetCard) planetCard.hidden = true;
+        if (searchError) searchError.hidden = true;
+
         if (noResultsPanel) {
             noResultsPanel.hidden = false;
-            noResultsPanel.textContent =
-                'Unable to load planet data. Please refresh the page.';
+
+            const heading = noResultsPanel.querySelector('h2');
+            const message = noResultsPanel.querySelector('p');
+
+            if (heading) heading.textContent = 'Unable to load planets';
+            if (message) {
+                message.textContent =
+                    'Planet data could not be loaded. Please check the JSON file and refresh the page.';
+            }
         }
     }
 }
+
 
 
 // Display the selected planet
